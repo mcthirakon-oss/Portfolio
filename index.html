@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="แฟ้มสะสมผลงาน (Portfolio) - นาย ธีรกร เภตรานนท์">
+  <title>ธีรกร เภตรานนท์ | Portfolio</title>
+
+  <!-- Google Fonts: Prompt & Kanit for modern Thai typography, Inter for numerals/latin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome for modern icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Ambient background lighting effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-monogram">TP</span>
+        <span class="brand-text">Thirakorn</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active">หน้าแรก</a>
+        <a href="#about" class="nav-link">เกี่ยวกับ</a>
+        <a href="#skills" class="nav-link">ทักษะ</a>
+        <a href="#projects" class="nav-link" onclick="openPortfolioSlider(0)">ผลงาน</a>
+        <a href="#contact" class="nav-link">ติดต่อ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn-connect">
+          <span>ติดต่อฉัน</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section (Landing Page) -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <!-- Left Side: Profile Photo -->
+        <div class="hero-left">
+          <div class="photo-wrapper">
+            <div class="photo-card-glow"></div>
+            <div class="photo-frame">
+              <img src="assets/profile.jpg" alt="นาย ธีรกร เภตรานนท์" class="profile-img" id="hero-profile-img">
+              <div class="photo-badge">
+                <span class="status-indicator"></span>
+                <span>พร้อมเรียนรู้และสร้างสรรค์</span>
+              </div>
+            </div>
+            <!-- Decorative tech badges -->
+            <div class="floating-tag tag-code">
+              <i class="fa-solid fa-code"></i>
+              <span>Developer</span>
+            </div>
+            <div class="floating-tag tag-creativity">
+              <i class="fa-solid fa-lightbulb"></i>
+              <span>Creative</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Name & Introduction -->
+        <div class="hero-right">
+          <div class="badge-welcome">
+            <i class="fa-solid fa-sparkles"></i>
+            <span>ยินดีต้อนรับสู่พอร์ตโฟลิโอ</span>
+          </div>
+
+          <h1 class="hero-name">
+            นาย ธีรกร เภตรานนท์
+          </h1>
+
+          <div class="typing-container">
+            <span class="typing-prefix">ผมคือ </span>
+            <span class="typing-text" id="typing-text">ผู้พัฒนาเว็บไซต์</span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            ยินดีต้อนรับสู่พื้นที่รวบรวมผลงาน ประสบการณ์ และทักษะความสามารถของผม
+            มุ่งมั่นสร้างสรรค์งานคุณภาพ ใส่ใจในรายละเอียด และพัฒนาตนเองอยู่เสมอ
+          </p>
+
+          <div class="hero-buttons">
+            <button class="btn btn-primary" id="btn-open-portfolio-slides" onclick="openPortfolioSlider(0)">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>ดูผลงาน (สไลด์นำเสนอ)</span>
+            </button>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>ส่งข้อความ</span>
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <span class="social-label">ติดตามฉันได้ที่:</span>
+            <div class="social-icons">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub"
+                aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                title="Facebook" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                title="Instagram" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="mailto:thirakorn@example.com" class="social-btn" title="Email" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <span class="scroll-wheel"></span>
+      </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">ABOUT ME</span>
+          <h2 class="section-title">ข้อมูลส่วนตัว</h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card highlight">
+            <div class="card-icon">
+              <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+            <h3>เกี่ยวกับผม</h3>
+            <p>
+              สวัสดีครับ ผม นาย ธีรกร เภตรานนท์ เป็นผู้ที่มีความหลงใหลในเทคโนโลยี
+              การพัฒนาเว็บไซต์ และการแก้ปัญหาด้วยโปรแกรมมิ่ง พร้อมเรียนรู้สิ่งใหม่ๆ ตลอดเวลา
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h3>การศึกษา</h3>
+            <p>
+              มุ่งมั่นศึกษาค้นคว้าทั้งในหลักสูตรและการศึกษาด้วยตนเอง
+              เสริมสร้างทักษะทั้งเชิงทฤษฎีและปฏิบัติเพื่อรองรับเทคโนโลยีที่ทันสมัย
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h3>เป้าหมาย</h3>
+            <p>
+              พัฒนาตนเองสู่การเป็นนักพัฒนาซอฟต์แวร์มืออาชีพ
+              สร้างสรรค์ผลงานที่ช่วยแก้ปัญหาและส่งมอบคุณค่าให้กับผู้ใช้งานจริง
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">MY EXPERTISE</span>
+          <h2 class="section-title">ทักษะและความสามารถ</h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Web Development -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa-solid fa-laptop-code"></i>
+              <h3>Web Development</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-chip"><i class="fa-brands fa-html5"></i> HTML5</div>
+              <div class="skill-chip"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+              <div class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</div>
+              <div class="skill-chip"><i class="fa-brands fa-react"></i> React</div>
+              <div class="skill-chip"><i class="fa-brands fa-node"></i> Node.js</div>
+            </div>
+          </div>
+
+          <!-- Tools & Platforms -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa-solid fa-toolbox"></i>
+              <h3>Tools & Workflow</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-chip"><i class="fa-brands fa-git-alt"></i> Git</div>
+              <div class="skill-chip"><i class="fa-brands fa-github"></i> GitHub</div>
+              <div class="skill-chip"><i class="fa-solid fa-terminal"></i> VS Code</div>
+              <div class="skill-chip"><i class="fa-brands fa-figma"></i> Figma</div>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <i class="fa-solid fa-brain"></i>
+              <h3>Soft Skills</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-chip"><i class="fa-solid fa-comments"></i> การสื่อสารและทำงานเป็นทีม</div>
+              <div class="skill-chip"><i class="fa-solid fa-puzzle-piece"></i> การแก้ปัญหาอย่างมีตรรกะ</div>
+              <div class="skill-chip"><i class="fa-solid fa-rotate"></i> การปรับตัวและเรียนรู้ไว</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">FEATURED WORKS</span>
+          <h2 class="section-title">ผลงานและโครงงาน</h2>
+          <div class="title-bar"></div>
+          <div class="header-action-center" style="margin-top: 1.25rem;">
+            <button class="btn btn-primary" onclick="openPortfolioSlider(0)">
+              <i class="fa-solid fa-play"></i>
+              <span>เปิดสไลด์นำเสนอผลงาน (Slide Presentation)</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-image-box">
+              <div class="project-placeholder">
+                <i class="fa-solid fa-window-restore"></i>
+              </div>
+              <div class="project-overlay">
+                <button class="btn-project-view" onclick="openPortfolioSlider(1)"><i class="fa-solid fa-eye"></i>
+                  ดูในสไลด์</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">HTML / CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <h3 class="project-title">Personal Portfolio Website</h3>
+              <p class="project-desc">
+                เว็บไซต์พอร์ตโฟลิโอส่วนตัว ดีไซน์เรียบหรูโทนสีดำ-ขาว (#000000 / #FFFFFF)
+                พร้อมแอนิเมชันและการแสดงผลที่รองรับทุกหน้าจอ
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-image-box">
+              <div class="project-placeholder">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+              <div class="project-overlay">
+                <button class="btn-project-view" onclick="openPortfolioSlider(2)"><i class="fa-solid fa-eye"></i>
+                  ดูในสไลด์</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Web App</span>
+                <span class="tag">UI/UX</span>
+              </div>
+              <h3 class="project-title">E-Commerce & Storefront</h3>
+              <p class="project-desc">
+                ต้นแบบระบบหน้าร้านออนไลน์ มีฟังก์ชันแสดงสินค้า ระบบตะกร้าสินค้า และหน้าชำระเงินที่ใช้งานง่าย
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-image-box">
+              <div class="project-placeholder">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div class="project-overlay">
+                <button class="btn-project-view" onclick="openPortfolioSlider(4)"><i class="fa-solid fa-eye"></i>
+                  ดูในสไลด์</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Dashboard</span>
+                <span class="tag">API</span>
+              </div>
+              <h3 class="project-title">Data Analytics Dashboard</h3>
+              <p class="project-desc">
+                แผงควบคุมแสดงข้อมูลสถิติ กราฟสรุปผลแบบเรียลไทม์ และการวิเคราะห์ข้อมูลอย่างมีประสิทธิภาพ
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">GET IN TOUCH</span>
+          <h2 class="section-title">ติดต่อฉัน</h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info-panel">
+            <h3>พร้อมพูดคุยและร่วมงานกันเสมอ</h3>
+            <p>
+              หากคุณมีข้อเสนอ ข้อซักถาม หรือโปรเจกต์ที่น่าสนใจ สามารถติดต่อผมได้ผ่านช่องทางด้านล่างนี้
+            </p>
+
+            <div class="contact-detail-items">
+              <div class="detail-item">
+                <div class="detail-icon"><i class="fa-solid fa-user"></i></div>
+                <div>
+                  <span class="detail-label">ชื่อ-นามสกุล</span>
+                  <p class="detail-value">นาย ธีรกร เภตรานนท์</p>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <div class="detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="detail-label">อีเมล</span>
+                  <p class="detail-value">thirakorn@example.com</p>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="detail-label">ที่อยู่</span>
+                  <p class="detail-value">ประเทศไทย (Thailand)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); showContactNotification();">
+            <div class="form-group">
+              <label for="name">ชื่อของคุณ</label>
+              <input type="text" id="name" placeholder="กรอกชื่อของคุณ" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">อีเมลของคุณ</label>
+              <input type="email" id="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">ข้อความ</label>
+              <textarea id="message" rows="4" placeholder="พิมพ์ข้อความที่ต้องการส่ง..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>ส่งข้อความ</span>
+            </button>
+            <div id="form-message" class="form-alert" style="display:none;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Slide Modal Presentation -->
+    <div class="slider-modal" id="slider-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="slider-backdrop" id="slider-backdrop"></div>
+
+      <div class="slider-container">
+        <!-- Top Bar with Progress & Close -->
+        <div class="slider-header">
+          <div class="slider-counter">
+            <span class="slide-indicator-badge"><i class="fa-solid fa-layer-group"></i> ผลงาน & ข้อมูล</span>
+            <span class="slide-step" id="slide-step-indicator">สไลด์ 1 / 4</span>
+          </div>
+          <div class="slider-progress-track">
+            <div class="slider-progress-bar" id="slider-progress-bar"></div>
+          </div>
+          <button class="slider-close-btn" id="slider-close-btn" aria-label="Close slider">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Slides Viewport & Track -->
+        <div class="slides-viewport">
+          <div class="slides-track" id="slides-track">
+
+            <!-- Slide 0: Blank Cinematic Start (หน้าจอดำสนิทเริ่มต้น รอการหมุนสกอร์เมาส์) -->
+            <div class="slide-item active slide-blank-item" data-slide="0">
+              <div class="slide-blank-container"></div>
+            </div>
+
+            <!-- Slide 1: Young Multi Style Cover (สไลด์หน้าปก: รูปและชื่อสไตล์โปสเตอร์) -->
+            <div class="slide-item slide-cover-poster-item" data-slide="1">
+              <div class="poster-container">
+                <!-- Subway Tile Grid Background -->
+                <div class="poster-tiles-bg"></div>
+                <div class="poster-lighting-overlay"></div>
+
+                <!-- Top Header / Meta Info -->
+                <div class="poster-top-header">
+                  <div class="poster-badge">
+                    <span class="poster-badge-dot"></span>
+                    <span>OFFICIAL PORTFOLIO 2026</span>
+                  </div>
+                  <div class="poster-thai-tag">นาย ธีรกร เภตรานนท์</div>
+                </div>
+
+                <!-- Layer 1: Massive Background Text (Like "YOUNG") -->
+                <div class="poster-bg-text-wrapper" aria-hidden="true">
+                  <span class="poster-bg-text">THIRAKORN</span>
+                </div>
+
+                <!-- Layer 2: Center Portrait of นาย ธีรกร เภตรานนท์ -->
+                <div class="poster-portrait-wrapper">
+                  <div class="poster-portrait-shadow"></div>
+                  <div class="poster-portrait-frame">
+                    <img src="assets/profile.jpg" alt="นาย ธีรกร เภตรานนท์" class="poster-portrait-img">
+                  </div>
+                </div>
+
+                <!-- Layer 3: Massive Foreground Block Text (Like "MULTI") -->
+                <div class="poster-fg-text-wrapper">
+                  <h1 class="poster-fg-text">PETRANON</h1>
+                  <div class="poster-name-th-banner">
+                    <span>นาย ธีรกร เภตรานนท์</span>
+                  </div>
+                </div>
+
+                <!-- Floating CTA: Mouse Wheel Scroll Indicator -->
+                <div class="poster-bottom-cta">
+                  <div class="poster-scroll-prompt" onclick="nextSlide()" role="button" tabindex="0"
+                    title="หมุนสกอร์เมาส์เพื่อดูผลงาน">
+                    <div class="scroll-mouse-device">
+                      <div class="scroll-mouse-wheel-dot"></div>
+                    </div>
+                    <div class="scroll-prompt-texts">
+                      <span class="scroll-prompt-primary">หมุนสกอร์เมาส์เพื่อดูผลงาน</span>
+                      <span class="scroll-prompt-secondary">SCROLL MOUSE DOWN TO EXPLORE</span>
+                    </div>
+                    <i class="fa-solid fa-angles-down scroll-bounce-arrow"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Cinematic Quote (ผมเป็นที่กลัวทุกอยาก / กลัวจนไม่ทำไร) -->
+            <div class="slide-item slide-quote-item slide-quote-1" data-slide="2">
+              <div class="slide-quote-container">
+                <h2 class="slide-quote-main">ผมเป็นคนที่กลัวทุกอย่าง</h2>
+                <p class="slide-quote-sub">กลัวจนไม่กล้าทำอะไร</p>
+              </div>
+            </div>
+
+            <!-- Slide 3: Cinematic Quote -->
+            <div class="slide-item slide-quote-item slide-quote-2" data-slide="3">
+              <div class="slide-quote-container">
+                <h2 class="slide-quote-main">ผมเลยคิดว่าเรากลัวอยู่แบบนี้<br>เราจะก้าวไปข้างหน้าได้ไง</h2>
+                <p class="slide-quote-sub">ผมเลยเลิกกลัวแล้วเริ่มทำสิ่งที่ผมไม่แค่ทำ</p>
+              </div>
+            </div>
+
+            <!-- Slide 4: First Game Project (TokNaRok) -->
+            <div class="slide-item slide-firstwork-item" data-slide="4">
+              <div class="slide-firstwork-container">
+                <div class="firstwork-top-header">
+                  <h2 class="firstwork-top-title">งานชิ้นแรกที่ผมทำ</h2>
+                </div>
+
+                <div class="firstwork-body">
+                  <div class="firstwork-visual-col">
+                    <div class="firstwork-img-wrapper">
+                      <img src="assets/toknarok.jpg" alt="TokNaRok DISEASE" class="firstwork-img">
+                    </div>
+                    <div class="firstwork-tag">HamsterHub gamejam x</div>
+                  </div>
+
+                  <div class="firstwork-text-col">
+                    <p class="firstwork-desc">
+                      เป็นเกมที่ผมสร้างเกมแรกชื่อTokNaRok<br>
+                      เนื้อเรื่อง:เด็กคนหนึ่งได้เดินเล่นอยู่แล้วก็โดน<br>
+                      ยมบาลดึงตัวลงไปในนรก แล้วเด็กคน<br>
+                      นั้นต้องหาทางออกจากนรก
+                    </p>
+                  </div>
+                </div>
+
+                <div class="firstwork-bottom-footer">
+                  <p class="firstwork-bottom-quote">เป็นจุดเริ่มต้นที่ผมได้เริ่มที่ได้กล้าได้ทำอะไรสักอย่าง</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Bottom Bar with Mouse Scroll Status & Dots Indicator -->
+        <div class="slider-bottom-bar">
+          <div class="slider-scroll-hint-bar">
+            <div class="mini-mouse-icon">
+              <div class="mini-mouse-wheel"></div>
+            </div>
+            <span>หมุนสกอร์เมาส์เพื่อเลื่อนสไลด์ (Scroll ⇅)</span>
+          </div>
+          <div class="slider-dots" id="slider-dots"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <p>&copy; 2026 <strong>นาย ธีรกร เภตรานนท์</strong>. All Rights Reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top" title="กลับสู่ด้านบน">
+          <span>กลับสู่ด้านบน</span>
+          <i class="fa-solid fa-chevron-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP for premium 3D slider effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
